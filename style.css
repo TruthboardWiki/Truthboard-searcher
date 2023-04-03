@@ -1,0 +1,30 @@
+@import url(https://truthboard.wikidot.com/theme:basic/code/1);
+head,body{
+  width:100%;
+  min-height:100%;
+}
+body{
+  margin:0;
+  background: none;
+  overflow-y: none;
+}
+input#search{
+  outline:none;
+  padding:7px 20px;
+  border:1px solid #777;
+  background:#444;
+  color:#aaa;
+  -webkit-appearance: none;
+  font-size:130%;
+  border-radius:34px;
+  width:90%;
+}
+#searchbtn{
+  border:1px solid #777;
+  padding:8.5px 5px;
+  border-radius:100%;
+  background:#444;
+  outline:none;
+  color:#aaa;
+  -webkit-appearance: none;
+}
