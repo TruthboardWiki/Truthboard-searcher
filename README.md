@@ -1,2 +1,9 @@
 # Truthboard-searcher
-真版站内搜索引擎，可适配所有非封闭wikidot网站。
+
+## 安装
+1. 将下载的压缩包解压，在命令行执行`sh ./main.sh`；
+2. 使用[Py-crawler](https://github.com/HelloOSMe/Py-crawler)存档你的网站；
+3. 将存档结果(`html`文件夹)移动到本项目的`./Py-crawler`目录下
+4. 运行php
+
+访问/update.php以使用服务器更新存档。
