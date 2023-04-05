@@ -21,6 +21,8 @@
 
 本项目最终解释权归[真理博客版站务组](https://truthboard.wikidot.com/rules#toc4)所有。
 
+使用与更改请遵守[协议](https://github.com/HelloOSMe/Truthboard-searcher/blob/main/LICENSE)
+
 ------
 
 Copyright 2022-2023 [Truthboard](https://truthboard.wikidot.com/)，  
