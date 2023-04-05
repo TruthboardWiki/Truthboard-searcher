@@ -20,3 +20,5 @@
 本搜索引擎([search.helloos.repl.co](https://search.helloos.repl.co))为泛真理博客版网站，使用此工具即代表您同意真理博客版相关规定，包括但不限于[真理博客版反骚扰政策](https://truthboard.wikidot.com/antis)、[真理博客版反破坏政策](https://truthboard.wikidot.com/blog:198)，以及[真理博客版网站规定](https://truthboard.wikidot.com/rules)。
 
 本项目最终解释权归[真理博客版站务组](https://truthboard.wikidot.com/rules#toc4)所有。
+
+Copyright (c) 2022-2023 [Truthboard](https://truthboard.wikidot.com/)
