@@ -9,6 +9,6 @@
 访问/update.php以使用服务器更新存档 ~~不过速度贼慢~~
 
 
-地址：https://search.helloos.eu.org/
+地址：https://search.helloos.repl.co/
 
 目前由于replit问题本项目访问速度较慢
