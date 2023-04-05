@@ -12,3 +12,11 @@
 地址：https://search.helloos.repl.co/
 
 由于replit问题,本项目访问速度较慢
+
+## 项目介绍
+
+真理博客版([truthboard.wikidot.com](http://truthboard.wikidot.com/))是一个微型社交网站，旨在让用户可以自由发表自己的观点，分享他们的生活、想法和理念。该网站也提供了一些工具，如发帖、评论和排序等，以便用户更好地管理和组织自己的信息。
+
+本搜索引擎([search.helloos.repl.co](https://search.helloos.repl.co))为泛真理博客版网站，使用此工具即代表您同意真理博客版相关规定，包括但不限于[真理博客版反骚扰政策](https://truthboard.wikidot.com/antis)、[真理博客版反破坏政策](https://truthboard.wikidot.com/blog:198)，以及[真理博客版网站规定](https://truthboard.wikidot.com/rules)。
+
+本项目最终解释权归[真理博客版站务组](https://truthboard.wikidot.com/rules#toc4)所有。
