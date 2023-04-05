@@ -6,4 +6,9 @@
 3. 将存档结果(`html`文件夹)移动到本项目的`./Py-crawler`目录下
 4. 运行php
 
-访问/update.php以使用服务器更新存档 ~~不过速度贼TM慢~~
+访问/update.php以使用服务器更新存档 ~~不过速度贼慢~~
+
+
+地址：https://search.helloos.eu.org/
+
+目前由于replit问题本项目访问速度较慢
