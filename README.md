@@ -2,7 +2,7 @@
 
 ## 安装
 1. 将下载的压缩包解压，在命令行执行`sh ./main.sh`；
-2. 使用[Py-crawler](https://github.com/HelloOSMe/Py-crawler)存档你的网站；
+2. 使用[Py-crawler](https://githubfast.com/HelloOSMe/Py-crawler)存档你的网站；
 3. 将存档结果(`html`文件夹)移动到本项目的`./Py-crawler`目录下
 4. 运行php
 
@@ -21,9 +21,7 @@
 
 本项目最终解释权归[真理博客版站务组](https://truthboard.wikidot.com/rules#toc4)所有。
 
-使用与更改请遵守[OS项目许可协议](https://github.com/HelloOSMe/Truthboard-searcher/blob/main/LICENSE)。
-
-本项目不对DFC、联协、ld提供任何服务，DFC、联协站务组禁止更改项目。
+使用与更改请遵守[OS项目许可协议](https://githubfast.com/HelloOSMe/Truthboard-searcher/blob/main/LICENSE)。
 
 ------
 
