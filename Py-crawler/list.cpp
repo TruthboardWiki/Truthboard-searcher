@@ -44,105 +44,105 @@ extern string char_to_str(const char* ch){
 }
 extern bool have_file(const char* f2){
 	ifstream fin (f2);
-  bool b=fin.is_open();
-  fin.close();
+	bool b=fin.is_open();
+	fin.close();
 	return b;
 }
 /*end.*/
 string HTMLToText(string html){
-  bool show=true;
-  string text="";
-  for(int i=0;i<html.size();i++){
-    if(html[i]=='<'){
-      show=false;
-    }
-    if(show){
-      text.push_back(html[i]);
-    }
-    if(html[i]=='>'){
-      show=true;
-    }
-  }
-  return text;
+	bool show=true;
+	string text="";
+	for(int i=0;i<html.size();i++){
+		if(html[i]=='<'){
+			show=false;
+		}
+		if(show){
+			text.push_back(html[i]);
+		}
+		if(html[i]=='>'){
+			show=true;
+		}
+	}
+	return text;
 }
 int CountHTML(string s){
-  int j=0;
-  for(int i=0;i<s.size();i++){
-    if(s[i]=='<'){
-      j++;
-    }
-    if(s[i+1]=='/'){
-      j-=2;
-    }
-  }
-  return j;
+	int j=0;
+	for(int i=0;i<s.size();i++){
+		if(s[i]=='<'){
+			j++;
+		}
+		if(s[i+1]=='/'){
+			j-=2;
+		}
+	}
+	return j;
 }
 extern string file_to_url(string fn){
-    string tmp="";
-    string url="";
-    int cnt=0;
-    for(int i=fn.size()-6;i>=0;i--){
-        if(fn[i]=='/'){
-            if(cnt==0){
-                url+=tmp;
-            }else if(tmp=="lmth"){
-                break;
-            }else{
-              url+=":"+tmp;
-            }
-            tmp.clear();
-            cnt++;
-        }else{
-            tmp.push_back(fn[i]);
-        }
-    }
-    reverse(url.begin(),url.end());
-    return SITEURL+url;
+	string tmp="";
+	string url="";
+	int cnt=0;
+	for(int i=fn.size()-6;i>=0;i--){
+		if(fn[i]=='/'){
+			if(cnt==0){
+				url+=tmp;
+			}else if(tmp=="lmth"){
+				break;
+			}else{
+				url+=":"+tmp;
+			}
+			tmp.clear();
+			cnt++;
+		}else{
+			tmp.push_back(fn[i]);
+		}
+	}
+	reverse(url.begin(),url.end());
+	return SITEURL+url;
 }
 extern void readfile(const char* fn){
-  ifstream fin(fn);
-  string s,sval="";
-  int diver=0;
-  bool show=false;
-  string title="";
-  string tmp="";
-  while(getline(fin,s)){
-    if(have_str("title",s)){
-      bool b=false,show=false;
-      string sss;
-      for(int i=0;i<s.size();i++){
-        if(s[i]=='<'){
-          b=true;
-        }else if(s[i]=='>'){
-          b=false;
-          if(sss=="title"){
-            show=true;
-          }else if(sss=="/title"){
-            show=false;
-          }
-        }else if(b){
-          sss.push_back(s[i]);
-        }else if(show){
-          title.push_back(s[i]);
-        }
-      }
-    }else if(have_str("page-content",s)){
-      diver++;
-    }
-    diver+=CountHTML(s);
-    sval=HTMLToText(s);
-    tmp=char_to_str(getcwd(NULL,0))+"/"+char_to_str(fn);
-    string sturl=file_to_url(tmp.c_str());
-    if(have_str(search_value,sval)&&pu[sturl]==0){
-      fout<<sturl<<endl<<title<<endl<<sval<<endl;
-      pu[sturl]=1;
-      break;
-    }
-    
-  }
+	ifstream fin(fn);
+	string s,sval="";
+	int diver=0;
+	bool show11=false;
+	string title="";
+	string tmp="";
+	while(getline(fin,s)){
+		if(have_str("title",s)){
+			bool b=false,show=false;
+			string sss;
+			for(int i=0;i<s.size();i++){
+				if(s[i]=='<'){
+					b=true;
+				}else if(s[i]=='>'){
+					b=false;
+					if(sss=="title"){
+						show=true;
+					}else if(sss=="/title"){
+						show=false;
+					}
+				}else if(b){
+					sss.push_back(s[i]);
+				}else if(show){
+					title.push_back(s[i]);
+				}
+			}
+		}else if(have_str("main-content",s)){
+			show11=true;
+		}else if(have_str("page-info-break",s)){
+			show11=false;
+		}
+		sval=HTMLToText(s);
+		tmp=char_to_str(getcwd(NULL,0))+"/"+char_to_str(fn);
+		string sturl=file_to_url(tmp.c_str());
+		if(have_str(search_value,sval)&&pu[sturl]==0&&show11){
+			fout<<sturl<<endl<<title<<endl<<sval<<endl;
+			pu[sturl]=1;
+			break;
+		}
+	}
 }
 extern int ls(string floder){
-  struct stat buf;
+	struct stat buf;
 	if(floder=="-h"||floder=="--help"){
 		cout<<"usage: ls [floder]"<<endl;
 	}
@@ -162,7 +162,7 @@ extern int ls(string floder){
 		return 1;
 	}
 	while((dirp=readdir(dp))!=NULL){
-    stat(dirp->d_name, &buf);
+		stat(dirp->d_name, &buf);
 		if(S_IFREG & buf.st_mode){
 			readfile(dirp->d_name);
 		}
@@ -171,8 +171,8 @@ extern int ls(string floder){
 	return 0;
 }
 extern vector<string> lsfloder(string floder){
-  vector<string> strlf;
-  struct stat buf;
+	vector<string> strlf;
+	struct stat buf;
 	char argv[256]={'\0'};
 	for(int i=0;i<floder.size();i++){
 		argv[i]=floder[i];
@@ -189,9 +189,9 @@ extern vector<string> lsfloder(string floder){
 		return strlf;
 	}
 	while((dirp=readdir(dp))!=NULL){
-    stat(dirp->d_name, &buf);
+		stat(dirp->d_name, &buf);
 		if(/*!have_file(dirp->d_name)*/S_IFDIR & buf.st_mode){
-      if(char_to_str(dirp->d_name)=="."||char_to_str(dirp->d_name)==".."){continue;}
+			if(char_to_str(dirp->d_name)=="."||char_to_str(dirp->d_name)==".."){continue;}
 			strlf.push_back(char_to_str(dirp->d_name));
 		}
 	}
@@ -199,25 +199,25 @@ extern vector<string> lsfloder(string floder){
 	return strlf;
 }
 void dfs(){
-  //深度优先搜索，遍历html文件夹。
-  //html文件夹可以看作数据库
-  //搜索到的相关内容将输出到../result.txt内，由php读取搜索内容。
-  vector<string> strlf=lsfloder(getcwd(NULL,0));
-  ls(char_to_str(getcwd(NULL,0)));
-  for(int i=0;i<strlf.size();i++){
-    chdir(strlf[i].c_str());
-    dfs();
-    chdir("..");
-  }
+	//深度优先搜索，遍历html文件夹。
+	//html文件夹可以看作数据库
+	//搜索到的相关内容将输出到../result.txt内，由php读取搜索内容。
+	vector<string> strlf=lsfloder(getcwd(NULL,0));
+	ls(char_to_str(getcwd(NULL,0)));
+	for(int i=0;i<strlf.size();i++){
+		chdir(strlf[i].c_str());
+		dfs();
+		chdir("..");
+	}
 }
 int main(int argc,char** argv){
-  chdir("html");
-  if(argc==1){
-    fout.close();
-    return 0;
-  }
-  search_value=char_to_str(argv[1]);
-  dfs();
-  fout.close();
-  return 0;
+	chdir("html");
+	if(argc==1){
+		fout.close();
+		return 0;
+	}
+	search_value=char_to_str(argv[1]);
+	dfs();
+	fout.close();
+	return 0;
 }
