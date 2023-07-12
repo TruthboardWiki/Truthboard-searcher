@@ -1,5 +1,7 @@
 # Truthboard-searcher
 
+# 警告：本项目发现漏洞（CWE-78），网站暂时停止上线！
+
 ## 安装
 1. 将下载的压缩包解压，在命令行执行`sh ./main.sh`；
 2. 使用[Py-crawler](https://githubfast.com/HelloOSMe/Py-crawler)存档你的网站；
